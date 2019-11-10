@@ -1,5 +1,6 @@
 <?php
 class App_model extends CI_Model {
+  // Add default column attributes and JS events to table column
   private $db_tables = array(
     'table_name' => array(
       'primary_key' => 'key_column',
@@ -81,5 +82,14 @@ class App_model extends CI_Model {
   );
   // form-array: mapping from JS-component to form element
   // form-name attribute: table_name-column_name
+  // Add form specific column attributes and JS events to table column
+  private $forms = array(
+    'form_component'=>array(
+      'main_table' => 'table_name',
+      'masters' => array('table_name', '...'),
+      'form_attributes' => array(''),
+      'column_attributes' => array('column_name'=>array('attribute'=>'value'))
+    )
+  );
 }
 ?>
